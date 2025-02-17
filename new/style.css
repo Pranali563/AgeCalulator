@@ -1,0 +1,248 @@
+/* General styling */
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #0f0f0f; /* Dark background for fireworks */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container to center content */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    transition: background-color 0.5s;
+}
+
+/* Heading styling */
+h1 {
+    font-size: 32px;
+    color: #ff69b4;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Button styling */
+button {
+    background-color: #ff80bf;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff3385;
+}
+
+/* Date input field styling */
+input[type="date"] {
+    background-color: #fff0f6;
+    border: 2px solid #ff69b4;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="date"]:hover {
+    background-color: #ffe6f0;
+    border-color: #ff3385;
+}
+
+input[type="date"]:focus {
+    background-color: #ffebf2;
+    border-color: #ff3385;
+    outline: none;
+}
+
+/* Fireworks container */
+.firework-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Individual firework styling */
+.firework {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff69b4;
+    opacity: 0;
+    animation: firework-explode 1.5s ease-out forwards;
+}
+
+@keyframes firework-explode {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    25% {
+        opacity: 0.8;
+        transform: scale(1.5);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(2);
+    }
+    75% {
+        opacity: 0.4;
+        transform: scale(3);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(4);
+    }
+}
+
+/* Romantic Heart animation */
+@keyframes heart-float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-100px);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    clip-path: polygon(50% 0%, 100% 35%, 50% 100%, 0% 35%);
+    animation: heart-float 5s ease-in-out infinite;
+    opacity: 0;
+}
+
+/* Additional heart effects */
+.heart:nth-child(odd) {
+    animation-delay: -1s;
+}
+
+.heart:nth-child(even) {
+    animation-delay: -3s;
+}
+
+/* Sparkling stars effect */
+@keyframes sparkle {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+    animation: sparkle 2s ease-in-out infinite;
+    opacity: 0;
+}
+
+.star:nth-child(odd) {
+    animation-delay: -1s;
+}
+
+.star:nth-child(even) {
+    animation-delay: -3s;
+}
+
+/* Romantic Pop-up styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup-img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.popup h2 {
+    color: #ff69b4;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.popup p {
+    font-size: 18px;
+    color: #ff3385;
+    font-weight: bold;
+}
+
+.popup button {
+    background-color: #ff3385;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.popup button:hover {
+    background-color: #ff80bf;
+}
+
+/* Background changes on special date */
+#main-container {
+    background-color: #fce4ec;
+}
+

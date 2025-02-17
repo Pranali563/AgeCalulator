@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="main-container">
+        <h1 id="greeting">🎉 Birthday Age Calculator 🎉</h1>
+        <form id="ageForm">
+            <label for="dob">Enter your Date of Birth:</label><br><br>
+            <input type="date" id="dob" name="dob" required><br><br>
+            <button type="submit">🎂 Calculate Age 🎂</button>
+        </form>
+        <h2 id="result"></h2>
+    </div>
+
+    <div class="firework-container"></div>
+
+    <div class="balloon-container">
+        <div class="balloon" style="left: 10%;"></div>
+        <div class="balloon" style="left: 30%;"></div>
+        <div class="balloon" style="left: 50%;"></div>
+        <div class="balloon" style="left: 70%;"></div>
+        <div class="balloon" style="left: 90%;"></div>
+    </div>
+
+    <!-- Birthday Song Audio -->
+    <audio id="birthdaySong" preload="auto">
+        <source src="audio/Birthday.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Pop-up Message -->
+    <div id="Popup" class="popup">
+        <div class="popup-content">
+            <!--img src="https://img.icons8.com/ios/452/heart.png" alt="Heart" class="popup-img"-->
+            <h2>💖💫 Happy Birthday Pranali! 💫💖</h2>
+            <p>Your special day is as sweet as you are! 🥰</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
